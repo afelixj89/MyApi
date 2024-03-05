@@ -10,6 +10,20 @@ export const getProducts = async (req, res) => {
   }
 };
 
+
+
+export const getProductByName = async (req, res) => {
+  try {
+    const { title } = req.params;
+    const products = await Product.findOne({ title: title });
+    res.json(products);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: error.message });
+  }
+};
+
+
 export const createProduct = async (req, res) => {
   const product = new Product(req.body);
   await product.save();
@@ -42,3 +56,4 @@ export const deleteProduct = async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 };
+
