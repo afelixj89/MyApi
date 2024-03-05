@@ -6,7 +6,7 @@ import productsRoutes from "./products.js";
 const router = Router()
 
 router.get("/", (req, res) => res.send("This is the api root"));
-router.use("/pdocucts", productsRoutes)
+router.use("/products", productsRoutes)
 
 
 export default router
