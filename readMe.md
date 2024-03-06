@@ -5,8 +5,7 @@ Welcome to the Product API documentation. This API provides information about va
 ### Base URL
 
 ```
-https://api.example.com/products
-```
+http://localhost:3000/products```
 
 ### Endpoints
 
@@ -56,18 +55,6 @@ The API responds with JSON objects containing details about the products. Each p
   ]
 }
 
-
-
-
-```
-
-
-
-
-
-
-
-Sure, here's the installation guide formatted in a README.md format:
 
 ---
 
