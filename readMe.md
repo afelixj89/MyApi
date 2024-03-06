@@ -5,7 +5,9 @@ Welcome to the Product API documentation. This API provides information about va
 ### Base URL
 
 ```
-http://localhost:3000/products```
+http://localhost:3000/products
+
+```
 
 ### Endpoints
 
