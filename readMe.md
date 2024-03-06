@@ -1,18 +1,20 @@
 ## Product API Documentation
 
-Welcome to the Product API documentation. This API provides information about various products available in different categories including smartphones, laptops, fragrances, skincare products, groceries, and home decoration items. Each product is described with details such as title, description, price, discount percentage, rating, stock availability, brand, category, and images.
+Welcome to the Product API documentation. This API provides information about various products available in different categories including smartphones, laptops, fragrances, skincare products, groceries, and home decoration items. Each product is described with details such as title, description, price, discount percentage, rating, stock availability, brand, category, and images. This API was built from data from https://dummyjson.com/. 
 
 ### Base URL
 
 ```
 http://localhost:3000/products
-
 ```
 
 ### Endpoints
 
 - **GET /products**: Retrieve all products.
-- **GET /products/{id}**: Retrieve a specific product by its ID.
+- **GET /products/{title}**: Retrieve a specific product by its title.
+- **Post /products**: Create a new product.
+- **Put /products/{id}**: Update a specific product by its ID.
+- **Delete /products/{id}**: Delete a specific product by its ID.
 
 ### Authentication
 
@@ -56,6 +58,8 @@ The API responds with JSON objects containing details about the products. Each p
     "https://cdn.dummyjson.com/product-images/1/thumbnail.jpg"
   ]
 }
+
+```
 
 
 ---
