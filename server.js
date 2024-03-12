@@ -5,9 +5,10 @@ import cors from "cors";
 import logger from "morgan";
 import chalk from "chalk";
 
+
 const app = express()
 
-const PORT = 3000
+const PORT = process.env.PORT || 3000
 
 app.use(express.json());
 app.use(cors());
@@ -16,8 +17,9 @@ app.use("/", routes)
 
 
 
+
 db.on("connected", () => {
     console.clear()
     console.log(chalk.blue("Connected to MongoDB!"))
-    app.listen(3000, () => (chalk.magenta(`Express serving running on ${PORT}`)))
+    app.listen(PORT, () => (chalk.magenta(`Express serving running on ${PORT}`)))
 })

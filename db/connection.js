@@ -1,10 +1,12 @@
 import mongoose from "mongoose";
 import chalk from "chalk";
 
+
+
 mongoose.set("returnOriginal", false);
 
 const MONGODB_URI = process.env.MONGODB_PROD ||
-'mongodb://localhost:27017/product'
+'mongodb://localhost/bookmarks'
 
 mongoose.connect(MONGODB_URI)
 
