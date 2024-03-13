@@ -1,17 +1,23 @@
 import mongoose from "mongoose";
 import chalk from "chalk";
 
-
+const connectionString =
+  process.env.DB_URL || "mongodb://127.0.0.1:27017/products";
 
 mongoose.set("returnOriginal", false);
 
-const MONGODB_URI = process.env.MONGODB_PROD ||
-'mongodb://localhost/bookmarks'
+mongoose
+  .connect(connectionString)
+  .catch((error) =>
+    console.log("Error connecting to MongoDB: ", error.message)
+  );
 
-mongoose.connect(MONGODB_URI)
+mongoose.connection.on("disconnected", () =>
+  console.log(chalk.bold("Disconnected from MongoDB!"))
+);
 
-mongoose.connection.on('connected', () => console.log("Connected to database"))
-mongoose.connection.on('disconnected', () => console.log("Disconnected from database"))
-mongoose.connection.on('error', error => console.error("Database error", error))
+mongoose.connection.on("error", (error) =>
+  console.error(chalk.red(`MongoDB connection error: ${error}`))
+);
 
-export default mongoose.connection
+export default mongoose.connection;
